@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://localhost:8080/cuems/tasklist.action -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+<title>选课列表</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./select.css" rel="stylesheet" type="text/css">
+<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./select-ui.min.js.download"></script>
+<script type="text/javascript">
+function modify(taskcourname,taskteaid,taskdepart,classdate,classplace){
+	 if (confirm("您确定要选择该课程吗？")) {
+			window.location.href = "/cuems/jsp/taskselectAdd.jsp?taskcourname=" +taskcourname+"&taskteaid="+taskteaid+"&taskdepart="+taskdepart
+			+"&classdate="+classdate+"&classplace="+classplace;
+		}
+}
+$(function(){
+	$('tbody tr:odd').addClass("trLight");
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">选课管理</div>
+    <div class="pageColumn">
+      <div class="pageButton"><span>选课列表</span></div>
+      <table>
+        <thead>
+        <tr>
+	          <th width="">课程名称</th>
+	          <th width="">任课教师</th>
+	          <th width="">学年</th>
+	          <th width="">学期</th>
+	          <th width="">考试方式</th>
+	          <th width="">开设院系</th>
+	          <th width="">上课时间</th>
+	          <th width="">上课地点</th>
+	          <th width="10%">操作</th>
+	      </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td>大学语文</td>
+            <td>413003</td>
+            <td>2015-2016</td>
+            <td>1</td>
+            <td>闭卷</td>
+            <td>文学院</td>
+            <td>周三（1,2节）</td>
+            <td>09-2009</td>
+            <td> 
+            <a onclick="modify(&#39;大学语文&#39;,&#39;413003&#39;,&#39;文学院&#39;,&#39;周三（1,2节）&#39;,&#39;09-2009&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            </td>
+          </tr>
+         
+          <tr class="trLight">
+            <td>大学英语</td>
+            <td>413005</td>
+            <td>2015-2016</td>
+            <td>1</td>
+            <td>闭卷</td>
+            <td>外国语学院</td>
+            <td>周二（1,2节）</td>
+            <td>09-2008</td>
+            <td> 
+            <a onclick="modify(&#39;大学英语&#39;,&#39;413005&#39;,&#39;外国语学院&#39;,&#39;周二（1,2节）&#39;,&#39;09-2008&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            </td>
+          </tr>
+         
+          <tr>
+            <td>高等数学</td>
+            <td>413007</td>
+            <td>2015-2016</td>
+            <td>1</td>
+            <td>闭卷</td>
+            <td>数学科学学院</td>
+            <td>周一（1,2节）/周三（1,2节）</td>
+            <td>09-2008</td>
+            <td> 
+            <a onclick="modify(&#39;高等数学&#39;,&#39;413007&#39;,&#39;数学科学学院&#39;,&#39;周一（1,2节）/周三（1,2节）&#39;,&#39;09-2008&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            </td>
+          </tr>
+         
+          <tr class="trLight">
+            <td>线性代数</td>
+            <td>413007</td>
+            <td>2015-2016</td>
+            <td>2</td>
+            <td>闭卷</td>
+            <td>数学科学学院</td>
+            <td>周一（5,6节）/周四（1,2节）</td>
+            <td>09-2009</td>
+            <td> 
+            <a onclick="modify(&#39;线性代数&#39;,&#39;413007&#39;,&#39;数学科学学院&#39;,&#39;周一（5,6节）/周四（1,2节）&#39;,&#39;09-2009&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            </td>
+          </tr>
+         
+          <tr>
+            <td>高级程序设计</td>
+            <td>413001</td>
+            <td>2015-2016</td>
+            <td>1</td>
+            <td>闭卷</td>
+            <td>信息管理学院</td>
+            <td>周三（7,8节）/周五（3,4节）</td>
+            <td>09-1009</td>
+            <td> 
+            <a onclick="modify(&#39;高级程序设计&#39;,&#39;413001&#39;,&#39;信息管理学院&#39;,&#39;周三（7,8节）/周五（3,4节）&#39;,&#39;09-1009&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div><!-- #widget -->
+   <div id="pagination" style="align:right;margin-top:-10px;">
+		<div id="project_pagination" class="pagination pagination-centered">
+			<div class="pagination">
+				<ul>
+					<li class="disabled"><a href="http://localhost:8080/cuems/tasklist.action?pn=0">«</a></li>
+					<!-- navigatepageNums是页面上的所有导航号 -->
+					<!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->
+                    
+                         
+                            <li class="active"><a href="http://localhost:8080/cuems/tasklist.action#">1</a></li>
+                        
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                    
+                         
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                            <li><a href="http://localhost:8080/cuems/tasklist.action?pn=2">2</a></li>
+                        
+                    
+                         
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                            <li><a href="http://localhost:8080/cuems/tasklist.action?pn=3">3</a></li>
+                        
+                    
+ 
+					
+					
+					<li><a href="http://localhost:8080/cuems/tasklist.action?pn=2">»</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body></html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://localhost:8080/cuems/taskselectlist.action -->
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+<title>无标题文档</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">教学任务管理</div>
+    <div class="pageColumn">
+      <div class="pageButton"><span>教学任务列表</span></div>
+      <table>
+        <thead>
+        <tr>
+	          <th width="">课程名称</th>
+	          <th width="">学年</th>
+	          <th width="">学期</th>
+	          <th width="">考试方式</th>
+	          <th width="">开设院系</th>
+	          <!-- <th width="">上课时间</th>
+	          <th width="">上课地点</th> -->
+	      </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td>高级程序设计</td>
+            <td>2015-2016</td>
+            <td>1</td>
+            <td>闭卷</td>
+            <td>信息管理学院</td>
+           
+          </tr>
+         
+          <tr class="trLight">
+            <td>Java</td>
+            <td>2015-2016</td>
+            <td>2</td>
+            <td>闭卷</td>
+            <td>信息管理学院</td>
+           
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div><!-- #widget -->
+</div>
+
+
+</body></html>

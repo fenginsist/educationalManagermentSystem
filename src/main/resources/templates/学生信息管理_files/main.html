@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://localhost:8080/cuems/stuquerylist.action -->
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+<title>无标题文档</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./select.css" rel="stylesheet" type="text/css">
+<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./select-ui.min.js.download"></script>
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript">
+
+function deletes(stuid){
+	if(confirm("您确定要执行删除操作吗？")){
+		 window.location.href="/cuems/deletestudent.action?stuid=" +stuid;	 
+	}
+}
+
+function modify(stuid,stuname,sex,stu_idcard,birthdays,studepartname,stumajorname,stulevel,stutel,stuaddress){
+	if(confirm("您确定要执行修改操作吗？")){
+	    window.location.href="/cuems/jsp/stuModify.jsp?stuid="+stuid+"&stuname="+stuname
+	    					+"&sex="+sex
+	    					+"&stu_idcard="+stu_idcard+"&birthdays="+birthdays
+	    					+"&studepartname="+studepartname+"&stumajorname="+stumajorname
+	    					+"&stulevel="+stulevel+"&stutel="+stutel
+	    					+"&stuaddress="+stuaddress;
+	  }
+	}
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">学生管理</div>
+    <div class="querybody">
+    	<form action="http://localhost:8080/cuems/searchStudent.action" method="POST">
+	    <ul class="seachform">
+		    <li><label>学号</label><input name="stuid" type="text" class="scinput"></li>
+		    <li><label>姓名</label><input name="stuname" type="text" class="scinput"></li>
+		    <li><label>&nbsp;</label><input name="" type="submit" class="scbtn" value="查询"></li>
+	    </ul>
+	    </form>
+	</div>
+	
+    <div class="pageColumn">
+      <div class="pageButton"><a href="http://localhost:8080/cuems/jsp/studentadd.jsp"><img src="./t01.png" title="新增"></a><span>学生列表</span></div>
+      <table>
+        <thead>
+        <tr>
+         <th width="">学号</th>
+	     <th width="">姓名</th>
+	     <!-- <th width="">密码</th> -->
+	     <th width="">性别</th>
+	     <th width="">身份证号</th>
+	     <th width="">出生日期</th>
+	     <th width="">院系</th>
+	     <th width="">专业</th>
+	     <th width="">层次</th>
+	     <th width="">联系电话</th>
+	     <th width="">家庭住址</th>
+          <th width="10%">操作</th>
+        </tr>
+        </thead>
+        
+          <tbody><tr class="icList">
+            <td id="studentid">201501004001</td>
+            <td id="studentname">李涛</td>
+           
+            <td>男</td>
+            <td>371202199507201267</td>
+            <td>1995-07-20</td>
+            <td>信息管理学院</td>
+            <td>计算机科学与技术</td>
+            <td>本科</td>
+            <td>13963455367</td>
+            <td>山东菏泽</td>
+            <td>
+             <a onclick="modify(&#39;201501004001&#39;,&#39;李涛&#39;,&#39;男&#39;,&#39;371202199507201267&#39;,&#39;1995-07-20&#39;,&#39;信息管理学院&#39;,&#39;计算机科学与技术&#39;,&#39;本科&#39;,&#39;13963455367&#39;,&#39;山东菏泽&#39;)"><img src="./edit.png" width="16" height="16"></a> 
+             <a onclick="deletes(201501004001)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr class="icList trLight">
+            <td id="studentid">201501004002</td>
+            <td id="studentname">赵新奇</td>
+           
+            <td>女</td>
+            <td>371202199701205326</td>
+            <td>1997-01-20</td>
+            <td>信息管理学院</td>
+            <td>计算机科学与技术</td>
+            <td>本科</td>
+            <td>13963457856</td>
+            <td>山东济南</td>
+            <td>
+             <a onclick="modify(&#39;201501004002&#39;,&#39;赵新奇&#39;,&#39;女&#39;,&#39;371202199701205326&#39;,&#39;1997-01-20&#39;,&#39;信息管理学院&#39;,&#39;计算机科学与技术&#39;,&#39;本科&#39;,&#39;13963457856&#39;,&#39;山东济南&#39;)"><img src="./edit.png" width="16" height="16"></a> 
+             <a onclick="deletes(201501004002)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr class="icList">
+            <td id="studentid">201501004003</td>
+            <td id="studentname">陈瑞</td>
+           
+            <td>男</td>
+            <td>371202199608123578</td>
+            <td>1996-08-12</td>
+            <td>信息管理学院</td>
+            <td>计算机科学与技术</td>
+            <td>本科</td>
+            <td>13963451465</td>
+            <td>山东济南</td>
+            <td>
+             <a onclick="modify(&#39;201501004003&#39;,&#39;陈瑞&#39;,&#39;男&#39;,&#39;371202199608123578&#39;,&#39;1996-08-12&#39;,&#39;信息管理学院&#39;,&#39;计算机科学与技术&#39;,&#39;本科&#39;,&#39;13963451465&#39;,&#39;山东济南&#39;)"><img src="./edit.png" width="16" height="16"></a> 
+             <a onclick="deletes(201501004003)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr class="icList trLight">
+            <td id="studentid">201501004004</td>
+            <td id="studentname">王震</td>
+           
+            <td>男</td>
+            <td>371202199609233425</td>
+            <td>1996-09-23</td>
+            <td>信息管理学院</td>
+            <td>计算机科学与技术</td>
+            <td>本科</td>
+            <td>13963457786</td>
+            <td>山东济南</td>
+            <td>
+             <a onclick="modify(&#39;201501004004&#39;,&#39;王震&#39;,&#39;男&#39;,&#39;371202199609233425&#39;,&#39;1996-09-23&#39;,&#39;信息管理学院&#39;,&#39;计算机科学与技术&#39;,&#39;本科&#39;,&#39;13963457786&#39;,&#39;山东济南&#39;)"><img src="./edit.png" width="16" height="16"></a> 
+             <a onclick="deletes(201501004004)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr class="icList">
+            <td id="studentid">201501004005</td>
+            <td id="studentname">刘瑞生</td>
+           
+            <td>男</td>
+            <td>371202199307181267</td>
+            <td>1993-07-18</td>
+            <td>音乐学院</td>
+            <td>音乐教育学</td>
+            <td>本科</td>
+            <td>13963457789</td>
+            <td>山东菏泽</td>
+            <td>
+             <a onclick="modify(&#39;201501004005&#39;,&#39;刘瑞生&#39;,&#39;男&#39;,&#39;371202199307181267&#39;,&#39;1993-07-18&#39;,&#39;音乐学院&#39;,&#39;音乐教育学&#39;,&#39;本科&#39;,&#39;13963457789&#39;,&#39;山东菏泽&#39;)"><img src="./edit.png" width="16" height="16"></a> 
+             <a onclick="deletes(201501004005)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+      </tbody></table>
+    </div>
+  </div><!-- #widget -->
+  <div id="pagination" style="align:right;margin-top:-10px;">
+		<div id="project_pagination" class="pagination pagination-centered">
+			<div class="pagination">
+				<ul>
+					<li class="disabled"><a href="http://localhost:8080/cuems/stuquerylist.action?pn=0">«</a></li>
+					
+					<!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->
+                    
+                         
+                            <li class="active"><a href="http://localhost:8080/cuems/stuquerylist.action#">1</a></li>
+                        
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                    
+                         
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                            <li><a href="http://localhost:8080/cuems/stuquerylist.action?pn=2">2</a></li>
+                        
+                    
+ 
+					
+					
+					<li><a href="http://localhost:8080/cuems/stuquerylist.action?pn=2">»</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+</body></html>

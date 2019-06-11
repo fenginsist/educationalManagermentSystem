@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://localhost:8080/cuems/gradeselectlist.action -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+<title>成绩信息列表</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./select.css" rel="stylesheet" type="text/css">
+<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./select-ui.min.js.download"></script>
+<script type="text/javascript">
+function modify(gradeid,grade){
+	 if (confirm("您确定要执行修改操作吗？")) {
+			window.location.href = "/cuems/jsp/gradeteaModify.jsp?gradeid=" +gradeid+"&grade="+grade;
+		}
+}
+$(function(){
+	$('tbody tr:odd').addClass("trLight");
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">成绩管理</div>
+    <div class="querybody">
+    <form action="http://localhost:8080/cuems/SearchOneCourseGrade.action" method="post">
+	    <ul class="seachform">
+	    <li><label>课程名称</label><input name="coursename" type="text" class="scinput"></li>
+	    <li><label>&nbsp;</label><input name="" type="submit" class="scbtn" value="查询"></li>
+	    </ul>
+	    </form>
+	</div>
+    <div class="pageColumn">
+      <div class="pageButton"><a href="http://localhost:8080/cuems/jsp/gradeteaadd.jsp"><img src="./t01.png" title="新增"></a><span>成绩列表</span></div>
+      <table>
+        <thead>
+        <tr>
+	          <th width="">学号</th>
+	          <th width="">姓名</th>
+	          <th width="">课程</th>
+	          <th width="">学分</th>
+	          <th width="">成绩</th>
+	          <th width="10%">操作</th>
+	      </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td>201501004001</td>
+            <td>刘瑞生</td>
+            <td>线性代数</td>
+            <td>4</td>
+            <td>90</td>
+            <td> 
+            <a onclick="modify(&#39;4&#39;,&#39;90&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div><!-- #widget -->
+   <div id="pagination" style="align:right;margin-top:-10px;">
+		<div id="project_pagination" class="pagination pagination-centered">
+			<div class="pagination">
+				<ul>
+					<li class="disabled"><a href="http://localhost:8080/cuems/gradeselectlist.action?pn=0">«</a></li>
+					<!-- navigatepageNums是页面上的所有导航号 -->
+					<!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->
+                    
+                         
+                            <li class="active"><a href="http://localhost:8080/cuems/gradeselectlist.action#">1</a></li>
+                        
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                    
+ 
+					
+					
+					<li><a href="http://localhost:8080/cuems/gradeselectlist.action?pn=2">»</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body></html>

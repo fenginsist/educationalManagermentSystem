@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0309)http://localhost:8080/cuems/jsp/taskselectAdd.jsp?taskcourname=%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6&taskteaid=413007&taskdepart=%E6%95%B0%E5%AD%A6%E7%A7%91%E5%AD%A6%E5%AD%A6%E9%99%A2&classdate=%E5%91%A8%E4%B8%80%EF%BC%881,2%E8%8A%82%EF%BC%89/%E5%91%A8%E4%B8%89%EF%BC%881,2%E8%8A%82%EF%BC%89&classplace=09-2008 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+<title>无标题文档</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./rl.js.download"></script><div id="ContainerPanel" style="display:none"><div id="calendarPanel" style="position: absolute;display: none;z-index: 9999;background-color: #FFFFFF;border: 1px solid gray;width:175px;font-size:12px;"></div></div>
+<script type="text/javascript">
+	$(function(){
+		$('tbody tr:odd').addClass("trLight");
+		$(".select-all").click(function(){
+			if($(this).attr("checked")){
+				$(".checkBox input[type=checkbox]").each(function(){
+					$(this).attr("checked", true);  
+					});
+				}else{
+					$(".checkBox input[type=checkbox]").each(function(){
+					$(this).attr("checked", false);  
+					});
+				}
+			});
+		});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+ <form method="post" action="http://localhost:8080/cuems/taskselectAdd.action" name="ThisForm">
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">选课编辑</div>
+    <div class="pageInfo">
+      <table>
+        <tbody><tr>
+        	<th>请确认选课信息</th>
+        </tr>
+        <tr class="trLight">
+          <td width="10%" align="right">课程名称</td>
+          <td width="50%"><input type="text" id="taskcourname" name="taskcourname" value="高等数学"></td>
+        </tr>
+        <tr>
+          <td width="10%" align="right">开设院系</td>
+          <td width="50%"><input type="text" id="taskdepart" name="taskdepart" value="数学科学学院"></td>
+        </tr>
+        <tr class="trLight">
+          <td width="20%" align="right">教师ID</td>
+          <td width="20%"><input type="text" id="taskteaid" name="taskteaid" value="413007"></td>
+        </tr>
+        <tr>
+          <td width="10%" align="right">开课时间</td>
+          <td width="50%"><input type="text" id="classdate" name="classdate" value="周一（1,2节）/周三（1,2节）"></td>
+        </tr>
+        <tr class="trLight">
+          <td width="10%" align="right">开课地点</td>
+          <td width="50%"><input type="text" id="classplace" name="classplace" value="09-2008"></td>
+        </tr>
+          <tr>
+          	<td colspan="4" align="center"><input type="submit" value="确定"> </td>
+          </tr>
+      </tbody></table>
+    </div>
+    <div class="field"><span style="color: red"></span></div>
+  </div><!-- #widget -->
+</div>
+</form>
+
+
+
+</body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://localhost:8080/cuems/jsp/stupwdupdate.jsp -->
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./修改密码_files/style.css" rel="stylesheet" type="text/css">
+<link href="./修改密码_files/jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./修改密码_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./修改密码_files/jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+<script type="text/javascript">
+	$(function(){
+		$('tbody tr:odd').addClass("trLight");
+		
+		$(".select-all").click(function(){
+			if($(this).attr("checked")){
+				$(".checkBox input[type=checkbox]").each(function(){
+					$(this).attr("checked", true);  
+					});
+				}else{
+					$(".checkBox input[type=checkbox]").each(function(){
+					$(this).attr("checked", false);  
+					});
+				}
+			});
+		
+		});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+ <form method="post" action="http://localhost:8080/cuems/updateStuPwd.action" name="ThisForm">
+<div id="contentWrap">
+  <div id="widget table-widget">
+    <div class="pageTitle">修改密码<div align="right"><a href="javascript:history.back(-1)">返回上一页</a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+    <div class="pageInfo">
+		<table>
+			<tbody><tr>
+				<td width="20%" align="right"></td>
+				<td width="20%"><span style="color: red"></span></td>
+			</tr>
+			<tr class="trLight">
+				<td width="20%" align="right">原始密码</td>
+				<td width="20%"><input type="password" id="password1" name="stupassword"></td>
+			</tr>
+			<tr>
+				<td width="20%" align="right">新密码</td>
+				<td width="20%"><input type="password" id="password2" name="password2"></td>
+			</tr>
+			<tr class="trLight">
+				<td width="20%" align="right">密码确认</td>
+				<td width="20%"><input type="password" id="password3" name="password3"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="确认"></td>
+			</tr>
+		</tbody></table>
+	</div>
+  </div>
+  
+</div>
+</form>
+
+
+</body></html>

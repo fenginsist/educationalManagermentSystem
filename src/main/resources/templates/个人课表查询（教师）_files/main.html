@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://localhost:8080/cuems/classselectlist.action -->
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+<title>无标题文档</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">课表管理</div>
+    <div class="pageColumn">
+      <div class="pageButton"><span>课表列表</span></div>
+      <table>
+        <thead>
+        <tr>
+	          <th width="">开课名称</th>
+	          <th width="">开课时间</th>
+	          <th width="">开课地点</th>  
+	      </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td>高级程序设计</td>
+            <td>周三（7,8节）/周五（3,4节）</td>
+            <td>09-1009</td>
+          </tr>
+         
+          <tr class="trLight">
+            <td>Java</td>
+            <td>周一（1,2节）/周三（7,8节）</td>
+            <td>09-2001</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div><!-- #widget -->
+</div>
+
+
+</body></html>

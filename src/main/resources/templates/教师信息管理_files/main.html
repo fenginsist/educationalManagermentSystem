@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://localhost:8080/cuems/teaquerylist.action -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+<title>教师信息列表</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./select.css" rel="stylesheet" type="text/css">
+<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./select-ui.min.js.download"></script>
+<script type="text/javascript">
+function deletes(teacherid){
+if (confirm("您确定要执行删除操作吗？")) {
+		window.location.href="/cuems/deleteteacher.action?teacherid="+teacherid;
+	}
+}
+function modify(teacherid,teachername,sex,teacher_idcard,birthdays,teadepartname,teamajorname,teadegree,teaposition,teatel,teaaddress){
+	 if (confirm("您确定要执行修改操作吗？")) {
+			window.location.href = "/cuems/jsp/teaModify.jsp?teacherid=" +teacherid+"&teachername="+teachername
+			+"&sex="+sex+"&teacher_idcard="+teacher_idcard
+			+"&birthdays="+birthdays+"&teadepartname="+teadepartname
+			+"&teamajorname="+teamajorname+"&teadegree="+teadegree
+			+"&teaposition="+teaposition
+			+"&teatel="+teatel+"&teaaddress="+teaaddress;
+		}
+}
+$(function(){
+	$('tbody tr:odd').addClass("trLight");
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">教师管理</div>
+    <div class="querybody">
+    <form action="http://localhost:8080/cuems/SearchTeacher.action" method="post">
+	    <ul class="seachform">
+	    <li><label>教师ID</label><input name="teacherid" type="text" class="scinput"></li>
+	    <li><label>姓名</label><input name="teachername" type="text" class="scinput"></li>
+	    <li><label>&nbsp;</label><input name="" type="submit" class="scbtn" value="查询"></li>
+	    </ul>
+	    </form>
+	</div>
+    <div class="pageColumn">
+      <div class="pageButton"><a href="http://localhost:8080/cuems/jsp/teacheradd.jsp"><img src="./t01.png" title="新增"></a><span>教师列表</span></div>
+      <table>
+        <thead>
+        <tr>
+	          <th width="">教师ID</th>
+	          <th width="">教师姓名</th>
+	          <th width="">性别</th>
+	          <th width="">身份证号</th>
+	          <th width="">出生日期</th>
+	          <th width="">所属院系</th>
+	          <th width="">专业</th>
+	          <th width="">学历</th>
+	          <th width="">职位</th>
+	          <th width="">联系电话</th>
+	          <th width="">家庭住址</th>
+	          <th width="10%">操作</th>
+	      </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td id="id">413001</td>
+            <td>张国厚</td>
+            <td>男</td>
+            <td>371202197602179876</td>
+            <td>1976-02-17</td>
+            <td>信息管理学院</td>
+            <td>计算机技术</td>
+            <td>博士</td>
+            <td>教授</td>
+            <td>13963451265</td>
+            <td>山东德州</td>
+            <td> 
+            <a onclick="modify(&#39;413001&#39;,&#39;张国厚&#39;,&#39;男&#39;,&#39;371202197602179876&#39;,&#39;1976-02-17&#39;,&#39;信息管理学院&#39;,&#39;计算机技术&#39;,&#39;博士&#39;,&#39;教授&#39;,&#39;13963451265&#39;,&#39;山东德州&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            <a onclick="deletes(413001)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr class="trLight">
+            <td id="id">413002</td>
+            <td>李梅</td>
+            <td>女</td>
+            <td>371202198105191254</td>
+            <td>1981-05-19</td>
+            <td>经济管理学院</td>
+            <td>金融学</td>
+            <td>硕士</td>
+            <td>副教授</td>
+            <td>17853461278</td>
+            <td>山东德州</td>
+            <td> 
+            <a onclick="modify(&#39;413002&#39;,&#39;李梅&#39;,&#39;女&#39;,&#39;371202198105191254&#39;,&#39;1981-05-19&#39;,&#39;经济管理学院&#39;,&#39;金融学&#39;,&#39;硕士&#39;,&#39;副教授&#39;,&#39;17853461278&#39;,&#39;山东德州&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            <a onclick="deletes(413002)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr>
+            <td id="id">413003</td>
+            <td>韩芳</td>
+            <td>女</td>
+            <td>371202198206244321</td>
+            <td>1982-06-24</td>
+            <td>信息管理学院</td>
+            <td>数据分析</td>
+            <td>硕士</td>
+            <td>副教授</td>
+            <td>17853461348</td>
+            <td>山东德州</td>
+            <td> 
+            <a onclick="modify(&#39;413003&#39;,&#39;韩芳&#39;,&#39;女&#39;,&#39;371202198206244321&#39;,&#39;1982-06-24&#39;,&#39;信息管理学院&#39;,&#39;数据分析&#39;,&#39;硕士&#39;,&#39;副教授&#39;,&#39;17853461348&#39;,&#39;山东德州&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            <a onclick="deletes(413003)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr class="trLight">
+            <td id="id">413004</td>
+            <td>田贵云</td>
+            <td>男</td>
+            <td>371202198302156787</td>
+            <td>1983-02-15</td>
+            <td>信息管理学院</td>
+            <td>计算机技术</td>
+            <td>硕士</td>
+            <td>副教授</td>
+            <td>17853468734</td>
+            <td>山东德州</td>
+            <td> 
+            <a onclick="modify(&#39;413004&#39;,&#39;田贵云&#39;,&#39;男&#39;,&#39;371202198302156787&#39;,&#39;1983-02-15&#39;,&#39;信息管理学院&#39;,&#39;计算机技术&#39;,&#39;硕士&#39;,&#39;副教授&#39;,&#39;17853468734&#39;,&#39;山东德州&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            <a onclick="deletes(413004)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr>
+            <td id="id">413005</td>
+            <td>张潇潇</td>
+            <td>女</td>
+            <td>371202198704171344</td>
+            <td>1987-04-17</td>
+            <td>信息管理学院</td>
+            <td>计算机科学与技术</td>
+            <td>硕士</td>
+            <td>副教授</td>
+            <td>17853467756</td>
+            <td>山东德州</td>
+            <td> 
+            <a onclick="modify(&#39;413005&#39;,&#39;张潇潇&#39;,&#39;女&#39;,&#39;371202198704171344&#39;,&#39;1987-04-17&#39;,&#39;信息管理学院&#39;,&#39;计算机科学与技术&#39;,&#39;硕士&#39;,&#39;副教授&#39;,&#39;17853467756&#39;,&#39;山东德州&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            <a onclick="deletes(413005)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div><!-- #widget -->
+   <div id="pagination" style="align:right;margin-top:-10px;">
+		<div id="project_pagination" class="pagination pagination-centered">
+			<div class="pagination">
+				<ul>
+					<li class="disabled"><a href="http://localhost:8080/cuems/teaquerylist.action?pn=0">«</a></li>
+					<!-- navigatepageNums是页面上的所有导航号 -->
+					<!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->
+                    
+                         
+                            <li class="active"><a href="http://localhost:8080/cuems/teaquerylist.action#">1</a></li>
+                        
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                    
+                         
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                            <li><a href="http://localhost:8080/cuems/teaquerylist.action?pn=2">2</a></li>
+                        
+                    
+ 
+					
+					
+					<li><a href="http://localhost:8080/cuems/teaquerylist.action?pn=2">»</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body></html>

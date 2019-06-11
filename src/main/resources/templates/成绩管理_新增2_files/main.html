@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://localhost:8080/cuems/SearchOneCourseSelect.action -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+<title>成绩管理</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./select.css" rel="stylesheet" type="text/css">
+<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./select-ui.min.js.download"></script>
+<script type="text/javascript">
+function add(stuid,courname){
+	 if (confirm("您确定要录入该学生的成绩吗？")) {
+			window.location.href = "/cuems/jsp/addStugrade.jsp?stuid="+stuid+"&courname="+courname;
+		}
+}
+$(function(){
+	$('tbody tr:odd').addClass("trLight");
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">学生名单</div>
+    <div class="pageColumn">
+      <div class="pageButton"><img src="./t01.png" title=""><span>成绩录入</span></div>
+      <table>
+        <thead>
+        <tr>
+	          <th width="">学生学号</th>
+	          <th width="">课程名称</th>
+	          <th width="10%">操作</th>
+	      </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td>201501004001</td>
+            <td>大学语文</td>
+            <td> 
+            <a onclick="add(&#39;201501004001&#39;,&#39;大学语文&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            </td>
+          </tr>
+         
+          <tr class="trLight">
+            <td>201501004002</td>
+            <td>大学语文</td>
+            <td> 
+            <a onclick="add(&#39;201501004002&#39;,&#39;大学语文&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div><!-- #widget -->
+   <div id="pagination" style="align:right;margin-top:-10px;">
+		<div id="project_pagination" class="pagination pagination-centered">
+			<div class="pagination">
+				<ul>
+					<li class="disabled"><a href="http://localhost:8080/cuems/SearchOneCourseSelect.action?pn=0">«</a></li>
+					<!-- navigatepageNums是页面上的所有导航号 -->
+					<!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->
+                    
+                         
+                            <li class="active"><a href="http://localhost:8080/cuems/SearchOneCourseSelect.action#">1</a></li>
+                        
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                    
+ 
+					
+					
+					<li><a href="http://localhost:8080/cuems/SearchOneCourseSelect.action?pn=2">»</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body></html>

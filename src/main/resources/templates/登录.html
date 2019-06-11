@@ -1,0 +1,246 @@
+<!DOCTYPE html >
+<!-- saved from url=(0041)http://localhost:8080/cuems/logout.action -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./登录_files/login.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="./登录_files/jQuery1.7.js.download"></script>
+<script type="text/javascript" src="./登录_files/jquery-1.8.2.min.js.download"></script>
+<script type="text/javascript" src="./登录_files/jquery1.42.min.js.download"></script>
+<script type="text/javascript" src="./登录_files/jquery.SuperSlide.js.download"></script>
+<script type="text/javascript" src="./登录_files/Validform_v5.3.2_min.js.download"></script>
+<script type="text/javascript" src="./登录_files/fun.base.js.download"></script>
+<script type="text/javascript" src="./登录_files/script.js.download"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var $tab_li = $('#tab ul li');
+	$tab_li.hover(function(){
+		$(this).addClass('selected').siblings().removeClass('selected');
+		var index = $tab_li.index(this);
+		$('div.tab_box > div').eq(index).show().siblings().hide();
+	});	
+});
+</script>
+<script type="text/javascript">
+$(function(){
+/*学生登录信息验证*/
+$("#stu_username_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入学号'){
+ $(this).val('');
+ }
+});
+$("#stu_username_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入学号');
+ }
+});
+$("#stu_password_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入密码'){
+ $(this).val('');
+ }
+});
+$("#stu_password_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入密码');
+ }
+});
+$("#stu_code_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入验证码'){
+ $(this).val('');
+ }
+});
+$("#stu_code_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入验证码');
+ }
+});
+/*导师登录信息验证*/
+$("#tea_username_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入教工号'){
+ $(this).val('');
+ }
+});
+$("#tea_username_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入教工号');
+ }
+});
+$("#tea_password_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入密码'){
+ $(this).val('');
+ }
+});
+$("#tea_password_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入密码');
+ }
+});
+$("#tea_code_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入验证码'){
+ $(this).val('');
+ }
+});
+$("#tea_code_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入验证码');
+ }
+});
+/*教务登录信息验证*/
+$("#sec_username_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入教务号'){
+ $(this).val('');
+ }
+});
+$("#sec_username_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入教务号');
+ }
+});
+$("#sec_password_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入密码'){
+ $(this).val('');
+ }
+});
+$("#sec_password_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入密码');
+ }
+});
+$("#sec_code_hide").focus(function(){
+ var username = $(this).val();
+ if(username=='输入验证码'){
+ $(this).val('');
+ }
+});
+$("#sec_code_hide").focusout(function(){
+ var username = $(this).val();
+ if(username==''){
+ $(this).val('输入验证码');
+ }
+});
+});
+</script>
+</head>
+
+<body>
+<div class="login">
+ <div id="tab">
+  <ul class="tab_menu">
+    <li class="selected">学生登录</li>
+    <li>教师登录</li>
+    <li>管理员登录</li>
+  </ul>
+  <div class="tab_box"> 
+    <!-- 学生登录开始 -->
+    <div>
+      <div class="stu_error_box" style="color: red"></div>
+      <form action="http://localhost:8080/cuems/stulogin.action" method="post" class="stu_login_error">
+        <div id="username">
+          <label>学&nbsp;&nbsp;&nbsp;号：</label>
+          <input type="text" id="stu_username_hide" name="stuid" value="输入学号">
+        </div>
+        <div id="password">
+          <label>密&nbsp;&nbsp;&nbsp;码：</label>
+          <input type="password" id="stu_password_hide" name="stupassword" value="输入密码">
+        </div>
+        <div id="code">
+        	<br>
+            <h3 style="color:blue;font-style:italic;">Welcome to login</h3>
+        </div>
+        <div id="remember">
+          <!-- <input type="checkbox" name="remember">
+          <label>记住密码</label> -->
+        </div>
+        <div id="login">
+          <button type="submit"></button>
+        </div>
+      </form>
+    </div>
+   <!-- 学生登录结束-->
+   <!-- 教师登录开始-->
+    <div class="hide">
+     <div class="tea_error_box" style="color: red"></div>
+
+<!--教职工-->
+      <form action="http://localhost:8080/cuems/tealogin.action" method="post" class="tea_login_error">
+        <div id="username">
+          <label>教工号：</label>
+          <input type="text" id="tea_username_hide" name="teacherid" value="输入教工号">
+          <!--ajaxurl="demo/valid.jsp"--> 
+        </div>
+        <div id="password">
+          <label>密&nbsp;&nbsp;&nbsp;码：</label>
+          <input type="password" id="tea_password_hide" name="teapassword" value="输入密码">
+        </div>
+         <div id="code">
+          <div id="code">
+        	<br>
+            <h3 style="color:blue;font-style:italic;">Welcome to login</h3>
+        </div>
+         </div> 
+        <div id="remember">
+          <!-- <input type="checkbox" name="remember">
+          <label>记住密码</label> -->
+        </div>
+        <div id="login">
+          <button type="submit"></button>
+        </div>
+      </form>
+    </div>
+     <!-- 教师登录结束-->
+     <!-- 管理员登录开始-->
+    <div class="hide">
+    <div class="sec_error_box" style="color: red"></div>
+      <form action="http://localhost:8080/cuems/manlogin.action" method="post" class="sec_login_error">
+        <div id="username">
+          <label>教务号：</label>
+          <input type="text" id="sec_username_hide" name="managerid" value="输入教务号">
+          <!--ajaxurl="demo/valid.jsp"--> 
+        </div>
+        <div id="password">
+          <label>密&nbsp;&nbsp;&nbsp;码：</label>
+          <input type="password" id="sec_password_hide" name="manpassword" value="输入密码">
+        </div>
+         <div id="code">
+           <div id="code">
+        	<br>
+            <h3 style="color:blue;font-style:italic;">Welcome to login</h3>
+        </div>
+         </div>
+        <div id="remember">
+          <!-- <input type="checkbox" name="remember">
+          <label>记住密码</label> -->
+        </div>
+        <div id="login">
+          <button type="submit"></button>
+        </div>
+      </form>
+    </div>
+     <!-- 管理员登录结束-->
+  </div> 
+</div>
+<div class="air-balloon ab-1 png" style="top: 82.9178px; left: 1050.64px;"></div>
+<div class="air-balloon ab-2 png" style="top: 92.0905px; left: 899.099px;"></div>
+<div class="footer"></div>
+</div>
+
+
+
+
+</body></html>

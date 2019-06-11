@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://localhost:8080/cuems/manquerylist.action -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+<title>管理员信息列表</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./select.css" rel="stylesheet" type="text/css">
+<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./select-ui.min.js.download"></script>
+<script type="text/javascript">
+function deletes(managerid){
+if (confirm("您确定要执行删除操作吗？")) {
+		window.location.href="/cuems/deletemanager.action?managerid="+managerid;
+	}
+}
+function modify(managerid,managername,sex,manager_idcard,birthdays,mandepartname,manposition,mantel,manaddress){
+	 if (confirm("您确定要执行修改操作吗？")) {
+			window.location.href = "/cuems/jsp/manModify.jsp?managerid=" +managerid+"&managername="+managername
+			+"&sex="+sex+"&manager_idcard="+manager_idcard
+			+"&birthdays="+birthdays+"&mandepartname="+mandepartname+"&manposition="+manposition
+			+"&mantel="+mantel+"&manaddress="+manaddress;
+		}
+}
+$(function(){
+	$('tbody tr:odd').addClass("trLight");
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">管理员管理</div>
+    <div class="querybody">
+    <form action="http://localhost:8080/cuems/SearchManager.action" method="post">
+	    <ul class="seachform">
+	    <li><label>管理员ID</label><input name="managerid" type="text" class="scinput"></li>
+	    <li><label>管理员名称</label><input name="managername" type="text" class="scinput"></li>
+	    <li><label>&nbsp;</label><input name="" type="submit" class="scbtn" value="查询"></li>
+	    </ul>
+	    </form>
+	</div>
+    <div class="pageColumn">
+      <div class="pageButton"><a href="http://localhost:8080/cuems/jsp/manageradd.jsp"><img src="./t01.png" title="新增"></a><span>管理员列表</span></div>
+      <table>
+        <thead>
+        <tr>
+	          <th width="">管理员ID</th>
+	          <th width="">管理员姓名</th>
+	          <th width="">性别</th>
+	          <th width="">身份证号</th>
+	          <th width="">出生日期</th>
+	          <th width="">部门</th>
+	          <th width="">职位</th>
+	          <th width="">联系电话</th>
+	          <th width="">家庭住址</th>
+	          <th width="10%">操作</th>
+	      </tr>
+        </thead>
+        <tbody>
+        
+          <tr>
+            <td id="id">101001</td>
+            <td>李涛</td>
+            <td>男</td>
+            <td>371202197308124368</td>
+            <td>1973-08-12</td>
+            <td>教务处</td>
+            <td>副主任</td>
+            <td>17853461789</td>
+            <td>山东德州</td>
+            <td> 
+            <a onclick="modify(&#39;101001&#39;,&#39;李涛&#39;,&#39;男&#39;,&#39;371202197308124368&#39;,&#39;1973-08-12&#39;,&#39;教务处&#39;,&#39;副主任&#39;,&#39;17853461789&#39;,&#39;山东德州&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            <a onclick="deletes(101001)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+          <tr class="trLight">
+            <td id="id">101002</td>
+            <td>王敏</td>
+            <td>女</td>
+            <td>371202198012149856</td>
+            <td>1980-12-14</td>
+            <td>行政管理</td>
+            <td>副主任</td>
+            <td>17853467782</td>
+            <td>山东德州</td>
+            <td> 
+            <a onclick="modify(&#39;101002&#39;,&#39;王敏&#39;,&#39;女&#39;,&#39;371202198012149856&#39;,&#39;1980-12-14&#39;,&#39;行政管理&#39;,&#39;副主任&#39;,&#39;17853467782&#39;,&#39;山东德州&#39;)"><img src="./edit.png" width="16" height="16"></a>
+            <a onclick="deletes(101002)"><img src="./del.png" width="16" height="16"></a> 
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div><!-- #widget -->
+   <div id="pagination" style="align:right;margin-top:-10px;">
+		<div id="project_pagination" class="pagination pagination-centered">
+			<div class="pagination">
+				<ul>
+					<li class="disabled"><a href="http://localhost:8080/cuems/manquerylist.action?pn=0">«</a></li>
+					<!-- navigatepageNums是页面上的所有导航号 -->
+					<!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->
+                    
+                         
+                            <li class="active"><a href="http://localhost:8080/cuems/manquerylist.action#">1</a></li>
+                        
+                        <!-- pageInfo.pages代表总页数 ：3页
+                        	 pageInfo.pageNum代表当前页
+                        -->
+                        
+                    
+ 
+					
+					
+					<li><a href="http://localhost:8080/cuems/manquerylist.action?pn=2">»</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body></html>

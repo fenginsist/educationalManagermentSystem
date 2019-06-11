@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://localhost:8080/cuems/ownquerylist.action -->
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+<title>无标题文档</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./select.css" rel="stylesheet" type="text/css">
+<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./select-ui.min.js.download"></script>
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">学生管理</div>
+    <div class="pageColumn">
+      <div class="pageButton"><span>学生列表</span></div>
+      <table>
+        <thead>
+        <tr>
+         <th width="">学号</th>
+	     <th width="">姓名</th>
+	     <th width="">性别</th>
+	     <th width="">身份证号</th>
+	     <th width="">出生日期</th>
+	     <th width="">院系</th>
+	     <th width="">专业</th>
+	     <th width="">层次</th>
+	     <th width="">联系电话</th>
+	     <th width="">家庭住址</th>
+        </tr>
+        </thead>
+          <tbody><tr class="icList">
+            <td id="studentid">201501004001</td>
+            <td id="studentname">李涛</td>
+            <td>男</td>
+            <td>371202199507201267</td>
+            <td>1995-07-20</td>
+            <td>信息管理学院</td>
+            <td>计算机科学与技术</td>
+            <td>本科</td>
+            <td>13963455367</td>
+            <td>山东菏泽</td>
+          </tr>
+      </tbody></table>
+    </div>
+  </div><!-- #widget -->
+</div>
+
+
+
+
+</body></html>

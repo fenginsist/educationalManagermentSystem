@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://localhost:8080/cuems/manlogin.action -->
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./学生成绩管理（管理员）_files/style.css" rel="stylesheet" type="text/css">
+<link href="./学生成绩管理（管理员）_files/jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./学生成绩管理（管理员）_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./学生成绩管理（管理员）_files/jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body style="overflow-y:hidden">
+    
+
+
+
+
+<script type="text/javascript">
+$(function(){
+	//setMenuHeight
+	$("#modifyPassword").click(function() {
+		 $("#showModify").dialog({
+				title:'修改密码',
+				width:430,
+				height:230,
+				buttons:{
+		            "确定":function(){},
+		            "取消":function(){$(this).dialog('close');}
+		        }
+			});
+	 });
+	$('.menu').height($(window).height()-51-27-26-5);
+	$('.sidebar').height($(window).height()-51-27-26-5);
+	$('.page').height($(window).height()-51-27-26-5);
+	$('.page iframe').width($(window).width()-15-168);
+});
+
+</script>
+
+<div id="wrap">
+	<div id="header">
+    <div class="logo fleft"></div>
+	<div class="topright">
+	<ul>
+		<li><span style="color:#fff ">欢迎你：李涛</span></li>
+	    <li><span><img src="./学生成绩管理（管理员）_files/index-logout.png" class="helpimg" height="16" width="16"></span><a href="http://localhost:8080/cuems/logout.action">注销</a></li>
+	    <li><span><img src="./学生成绩管理（管理员）_files/t07.png" class="helpimg" height="16" width="16"></span><a href="http://localhost:8080/cuems/jsp/userpwdupdate.jsp">修改密码</a></li>
+	</ul>
+	</div>
+    <div class="clear"></div>
+    <div class="subnav">
+    	<div class="subnavLeft fleft"></div>
+        <div class="fleft"></div>
+        <div class="subnavRight fright"></div>
+    </div>
+    </div><!--#header -->
+    <div id="content">
+    <div class="space"></div>
+    <div class="menu fleft" style="height: 466px;">
+      <ul>
+        <li class="subMenuTitle">菜单</li>
+   		<!-- 管理员：用户信息管理、学生信息管理、教师信息管理、课程信息管理、课表信息管理、教学任务管理、学生成绩管理 -->
+        	<ul>
+               <li><a href="http://localhost:8080/cuems/manquerylist.action" target="right">用户信息管理</a></li>
+               <li><a href="http://localhost:8080/cuems/stuquerylist.action" target="right">学生信息管理</a></li>
+               <li><a href="http://localhost:8080/cuems/teaquerylist.action" target="right">教师信息管理</a></li>
+               <li><a href="http://localhost:8080/cuems/courquerylist.action" target="right">课程信息管理</a></li>
+               <li><a href="http://localhost:8080/cuems/courselectlist.action" target="right">选课信息管理</a></li>
+               <li><a href="http://localhost:8080/cuems/classquerylist.action" target="right">课表信息管理</a></li>
+               <li><a href="http://localhost:8080/cuems/taskquerylist.action" target="right">教学任务管理</a></li>
+               <li><a href="http://localhost:8080/cuems/gradequerylist.action" target="right">学生成绩管理</a></li>
+            </ul>
+        </ul>
+    </div>
+    <div class="sidebar fleft" style="height: 466px;"><div class="btn"></div></div>
+    <div class="page" style="height: 466px;">
+    <iframe width="100%" scrolling="auto" height="100%" frameborder="false" allowtransparency="true" style="border: medium none; width: 1183px;" src="./学生成绩管理（管理员）_files/main.html" id="rightMain" name="right"></iframe>
+    </div>
+    </div><!--#content -->
+    <div class="clear"></div>
+    <div id="footer">CopyRight © 2017-2018  </div><!--#footer -->
+</div><!--#wrap -->
+
+
+</body></html>

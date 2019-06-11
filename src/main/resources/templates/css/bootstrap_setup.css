@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+/* #####################################################################################################
+	bootstrapのカスタマイズ用css
+
+######################################################################################################## */
+body{font-size:13px;}
+
+dl{padding:0 10px;}
+
+a{color:#0060A4;}
+/* =====================================================================================================
+	▼layout
+======================================================================================================== */
+.row [class*="span"],
+.row-fluid [class*="span"]{float:left;}
+/* =====================================================================================================
+	▼form
+======================================================================================================== */
+/*radio label*/
+label{font-size:12px;}
+
+.radio.inline + .radio.inline, .checkbox.inline + .checkbox.inline {
+	margin-left: 12px;
+}
+
+.radio.inline, .checkbox.inline, .sort.inline {
+	display: inline-block;
+	margin-bottom: 0;
+	padding-top: 0;
+	vertical-align: middle;
+}
+
+/*input focus*/
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+	border-color: rgba(91, 174, 41, 0.8);
+	outline: 0;
+	/* IE6-9 */
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 174, 41, 0.8);
+		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 174, 41, 0.8);
+					box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 174, 41, 0.8);
+}
+
+/*form-actions*/
+.form-actions{margin-top:50px;}
+
+/*control-group*/
+.control-group.division{margin-bottom:70px;}
+/* =====================================================================================================
+	▼modal
+======================================================================================================== */
+.modal-backdrop, .modal-backdrop.fade.in{opacity:0.5;filter:alpha(opacity=50);}
+
+.modal-header strong{font-size:14px;}
+
+.modal-body p{margin-bottom:25px;}
+
+.modal-body .form-horizontal .control-group{margin-bottom:10px;}
+
+.modal-body .images{text-align:center;}
+
+.modal-body label{
+	cursor:default;
+	min-width: 40px;
+}
+
+.modal-footer{text-align:center;}
+/* =====================================================================================================
+	▼tooltip
+======================================================================================================== */
+/*ポップオーバータイプ*/
+.popover-title {padding:1px 15px 0 15px;line-height:27px;}
+.popover-content{padding-top:13px;}
+.popover-inner {
+	background: #659D33;
+	width:auto;
+	max-width: 390px;
+	min-width: 130px;
+}
+.popover.top .arrow{border-top: 5px solid #659D33;}
+.popover.left .arrow{border-left: 5px solid #659D33;}
+.popover.right .arrow{border-right: 5px solid #659D33;}
+.popover.bottom .arrow{border-bottom: 5px solid #659D33;}
+
+/*ツールチップタイプ*/
+.tooltip{font-size:79%;}
+.tooltip.in {
+	opacity: 1.0;
+	filter: alpha(opacity=100);
+}
+
+.tooltip.top .tooltip-arrow {border-top: 5px solid #659D33;}
+.tooltip.left .tooltip-arrow {border-left: 5px solid #659D33;}
+.tooltip.bottom .tooltip-arrow {border-bottom: 5px solid #659D33;}
+.tooltip.right .tooltip-arrow {border-right: 5px solid #659D33;}
+.tooltip-inner {color: #fff;background-color: #659D33;}
+/* =====================================================================================================
+	▼nav
+======================================================================================================== */
+.breadcrumb a{outline:none;}
+.breadcrumb > .active a,
+.breadcrumb > .disabled{color: #999;text-decoration:none;}
+
+/*navbar*/
+.navbar {
+	margin-bottom:0;
+}
+.navbar-inverse .navbar-inner {
+	background-color: #1b1b1b;
+	background-image: -moz-linear-gradient(top, #4a4a4a, #000000);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4a4a4a), to(#000000));
+	background-image: -webkit-linear-gradient(top, #4a4a4a, #000000);
+	background-image: -o-linear-gradient(top, #4a4a4a, #000000);
+	background-image: linear-gradient(to bottom, #4a4a4a, #000000);
+	background-repeat: repeat-x;
+	border:0;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4a4a4a', endColorstr='#ff000000', GradientType=0);
+	padding-left:10px;
+	padding-right:10px;
+}
+/*navbar > menu*/
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus{
+	background-color:#1E691A;
+	color:#c1e099;
+}
+.navbar-inverse .nav-collapse .nav > li > a{color:#bbb;}
+
+.navbar-inverse .nav > li > a:hover{color:#eee;}
+/* =====================================================================================================
+	▼table
+======================================================================================================== */
+.table a{outline:none;}
+
+.table thead th, .table tbody td.th-left{
+	background-color:#ECF5FA;
+	font-weight:bold;
+}
+.table-striped tbody tr:nth-child(2n+1) td.th-left {background-color: #ECF5FA;}
+
+.table.group-top tbody td,
+.table.group-top tbody tr:nth-child(2n+1) td,
+.table.group-top tbody tr:nth-child(2n+1) th{background-color:#ddd;}
+
+/*padding*/
+.table th, .table td{
+	line-height:17px;
+	padding:3px;
+}
+
+.table  tbody tr:hover td,
+.table  tbody tr:hover th{background-color:#81A9E8;}
+.table tbody tr:hover td.th-left{background-color:#f9f9f9;}
+
+
+table.no-border th,
+table.no-border td{border:none;}
+
+
+table.inner-table {margin:0;}
+table.inner-table th,
+table.inner-table td{padding:2px;}
+
+
+.table th.left,
+.table td.left {text-align:left;}
+.table th.center,
+.table td.center {text-align:center;}
+.table th.right,
+.table td.right {text-align:right;}
+
+.table td pre{
+	background:none;
+	border:0;
+	border-radius:0;
+	padding:0;
+	color:inherit;
+	line-height:inherit;
+	white-space: normal;
+}
+
+.table-nest table th, .result .table td{border:0;}
+.table-nest .table tbody,
+.table-nest .table thead{border-bottom:1px solid #ddd;}
+.table-nest .table tbody + tbody{border-top:0;}
+.table-nest .table  tbody:hover tr{background-color:#f9f9f9;}
+/* =====================================================================================================
+	▼icon
+======================================================================================================== */
+.icon-user,
+.icon-home,
+.icon-time,
+.icon-tag{opacity:0.5;filter: alpha(opacity=50);}
+/* =====================================================================================================
+	▼dropdown / datapicker
+======================================================================================================== */
+/*today*/
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover {
+	background-color: #C4F287;
+	background-image: -moz-linear-gradient(top, #E0F4C6, #C4F287);
+	background-image: -ms-linear-gradient(top, #E0F4C6, #C4F287);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E0F4C6), to(#C4F287));
+	background-image: -webkit-linear-gradient(top, #E0F4C6, #C4F287);
+	background-image: -o-linear-gradient(top, #E0F4C6, #C4F287);
+	background-image: linear-gradient(top, #E0F4C6, #C4F287);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E0F4C6', endColorstr='#C4F287', GradientType=0);
+	border:0;
+}
+/*datepicker day*/
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover,
+/*datepicker year month*/
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active:hover.disabled,
+.datepicker table tr td span.active.disabled.disabled,
+.datepicker table tr td span.active.disabled:hover.disabled,
+.datepicker table tr td span.active[disabled],
+.datepicker table tr td span.active:hover[disabled],
+.datepicker table tr td span.active.disabled[disabled],
+.datepicker table tr td span.active.disabled:hover[disabled],
+/*dropdown*/
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+	background-color: #72b21d;
+	background-image: -moz-linear-gradient(top, #74cd00, #72b21d);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#74cd00), to(#72b21d));
+	background-image: -webkit-linear-gradient(top, #74cd00, #72b21d);
+	background-image: -o-linear-gradient(top, #74cd00, #72b21d);
+	background-image: linear-gradient(to bottom, #74cd00, #72b21d);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff74cd00', endColorstr='#ff72b21d', GradientType=0);
+	color:#fff;
+	border:0;
+}
+
+/*datepicker*/
+.datepicker thead tr:first-child th.switch {
+	background: #eee;
+}
+.datepicker table tr td.old,
+.datepicker table tr td.new {
+	color: #bbb;
+}
+
+.datepicker table tr td.today.active,
+.datepicker table tr td.old.active,
+.datepicker table tr td.new.active{color:#fff !important;}
+/* =====================================================================================================
+	▼alart/well
+======================================================================================================== */
+.alert.adjust,
+.well.adjust{display:inline-block;}
+/* =====================================================================================================
+	▼breadcrumb / pagination
+======================================================================================================== */
+/*breadcrumb*/
+.breadcrumb > .active a{
+	color:#0060A4;
+	font-weight:bold;
+}
+
+/*pagination*/
+.pagination{margin:0;margin-top:15px}
+
+.pagination li a,
+.pagination .disabled a{outline:none;}
+/* =====================================================================================================
+	▼caret
+======================================================================================================== */
+.caret,
+.caret.up{
+	margin-top:8px;
+	margin-right:3px;
+}
+.caret.up{
+	border-top: 0;
+	border-bottom: 4px solid #000000;
+	content: "";
+}
+
+.btn .caret,
+.btn .caret.up{
+	margin-right:0;
+}
+/* =====================================================================================================
+	▼progress
+======================================================================================================== */
+.progress {
+	background-color: #eeeeee;
+	background-image: -moz-linear-gradient(top, #f5f5f5, #eeeeee);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#eeeeee));
+	background-image: -webkit-linear-gradient(top, #f5f5f5, #eeeeee);
+	background-image: -o-linear-gradient(top, #f5f5f5, #eeeeee);
+	background-image: linear-gradient(to bottom, #f5f5f5, #eeeeee);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffeeeeee', GradientType=0);
+}
+/* =====================================================================================================
+	▼outline
+======================================================================================================== */
+/*outline*/
+.btn.btn-mini,
+.window-btn.btn,
+.btn.btn-success,
+.btn.btn-primary,
+.btn.btn-danger,
+.form-actions .btn,
+.controls .btn,
+button.close,
+.row-fluid .btn,
+.accordion-heading a{outline:none;}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://localhost:8080/cuems/jsp/studentadd.jsp -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>高校教务管理系统</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./jquery-ui.js.download"></script>
+<script type="text/javascript">
+$(function(){
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+		
+	$('tbody tr:odd').addClass("trLight");
+	
+	$(".select-all").click(function(){
+		if($(this).attr("checked")){
+			$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", true);  
+				});
+			}else{
+				$(".checkBox input[type=checkbox]").each(function(){
+				$(this).attr("checked", false);  
+				});
+			}
+		});
+	$(".active a").click(function(){
+		$(this).attr('href', '#'); 
+	});
+});
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+</head>
+<body>
+    
+
+
+
+
+
+
+<title>无标题文档</title>
+<link href="./style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./rl.js.download"></script><div id="ContainerPanel" style="display:none"><div id="calendarPanel" style="position: absolute;display: none;z-index: 9999;background-color: #FFFFFF;border: 1px solid gray;width:175px;font-size:12px;"></div></div>
+<script type="text/javascript">
+	$(function(){
+		$('tbody tr:odd').addClass("trLight");
+		$(".select-all").click(function(){
+			if($(this).attr("checked")){
+				$(".checkBox input[type=checkbox]").each(function(){
+					$(this).attr("checked", true);  
+					});
+				}else{
+					$(".checkBox input[type=checkbox]").each(function(){
+					$(this).attr("checked", false);  
+					});
+				}
+			});
+		});
+</script>
+<script type="text/javascript">
+	function checkId(){ 
+    var Idcard = document.getElementById('stuidcard').value;
+    if(!(/\d{17}[\d|x]|\d{15}/.test(Idcard))){ 
+        alert("您输入的身份证号有误，请按正确格式重新填写");  
+        return false; 
+    } 
+}
+</script>
+<style type="text/css">
+body {
+	background:#FFF
+}
+</style>
+
+
+ <form method="post" action="http://localhost:8080/cuems/studentadd.action" name="ThisForm">
+<div id="contentWrap">
+	<!--表格控件 -->
+  <div id="widget table-widget">
+    <div class="pageTitle">学生添加</div>
+    <div class="pageInfo">
+      <table>
+        <tbody><tr>
+          <td width="" align="right">姓名</td>
+          <td width=""><input type="text" id="stuname" name="stuname"></td>
+          <td width="" align="right">密码</td>
+          <td width=""><input type="password" id="password" name="stupassword"></td>
+        </tr>
+        <tr class="trLight">
+          <td align="right">性别</td>
+          <td>
+          <select id="sex" name="sex">
+	        <option value="0">请选择</option>      
+	    	<option value="男">男</option>      
+	    	<option value="女">女</option>      
+	      </select>
+          </td>
+          <td align="right">身份证号</td>
+          <td><input type="text" id="stuidcard" name="stu_idcard" onblur="return checkId()"></td>
+        </tr>
+        <tr>
+          <td align="right">出生日期</td>
+          <td width=""><input type="text" id="birthday" name="birthday" onclick="SelectDate(this.name)"></td>
+          <td align="right">院系</td>
+          <td><input type="text" id="studepartname" name="studepartname"></td>
+	     </tr>
+	     <tr class="trLight">
+	      <td align="right">专业</td>
+          <td><input type="text" id="stumajorname" name="stumajorname"></td>
+          <td align="right">层次</td>
+       	  <td>
+	         	<select id="stulevel" name="stulevel">
+	          		<option value="0">请选择</option>      
+	    			<option value="本科">本科</option>      
+	    			<option value="专科">专科</option>      
+	          	</select>
+          </td>
+         </tr>
+         <tr>
+          	 <td align="right">联系电话</td>
+          	 <td><input type="text" id="stutel" name="stutel"></td>
+          	 <td align="right">家庭住址</td>
+          	 <td><input type="text" id="stuaddress" name="stuaddress"></td>
+         </tr>
+         <tr class="trLight">
+          	<td colspan="4" align="center"><input type="submit" value="确定"> </td>
+         </tr>
+      </tbody></table>
+    </div>
+    <div class="field"><span style="color: red"></span></div>
+  </div><!-- #widget -->
+</div>
+</form>
+
+
+
+</body></html>
